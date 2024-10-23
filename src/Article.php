@@ -483,13 +483,14 @@ class Article extends Field
 
     /**
      *
-     * @param  mixed  $value
-     * @param  ElementInterface|null  $element
+     * @param mixed $value
+     * @param ElementInterface|null $element
+     * @param bool $inline
      * @return string
      * @throws InvalidConfigException
      *
      */
-    protected function inputHtml($value, ElementInterface $element = null): string
+    protected function inputHtml(mixed $value, ElementInterface $element = null, bool $inline = false): string
     {
         // register the asset/article bundles
         $view = Craft::$app->getView();
@@ -718,7 +719,7 @@ class Article extends Field
     private function _getSectionSources(Element $element = null): array
     {
         $sources = [];
-        $sections = Craft::$app->getSections()->getAllSections();
+        $sections = Craft::$app->getEntries()->getAllSections();
         $showSingles = false;
 
         // Get all sites

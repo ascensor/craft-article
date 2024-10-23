@@ -3,8 +3,9 @@
 namespace creativeorange\craft\article\assets;
 
 use craft\web\AssetBundle;
-use craft\web\assets\cp\CpAsset;
+//use craft\web\assets\cp\CpAsset;
 use creativeorange\craft\article\Plugin;
+use yii\web\JqueryAsset;
 
 class EditorAssets extends AssetBundle
 {
@@ -25,7 +26,7 @@ class EditorAssets extends AssetBundle
         parent::init();
 
         $this->depends = [
-            CpAsset::class,
+            JqueryAsset::class,
         ];
 
         $this->js = [
